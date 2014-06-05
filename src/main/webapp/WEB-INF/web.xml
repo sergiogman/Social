@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+<!-- 	<servlet> -->
+<!-- 		<servlet-name>fbpanel</servlet-name> -->
+<!-- 		<servlet-class>insonet.FacebookServlet</servlet-class> -->
+<!-- 	</servlet> -->
+	<servlet>
+		<servlet-name>fbsignin</servlet-name>
+		<servlet-class>facebook4j.sign.SignInServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>fbcallback</servlet-name>
+		<servlet-class>facebook4j.sign.CallbackServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>fblogout</servlet-name>
+		<servlet-class>facebook4j.sign.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>fbpost</servlet-name>
+		<servlet-class>facebook4j.profile.PostServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>fbfriends</servlet-name>
+		<servlet-class>facebook4j.profile.FriendsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>fbstatus</servlet-name>
+		<servlet-class>facebook4j.profile.StatusServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>fbtimeline</servlet-name>
+		<servlet-class>facebook4j.profile.StreamServlet</servlet-class>
+	</servlet>
+
+<!-- 	<servlet-mapping> -->
+<!-- 		<servlet-name>fbpanel</servlet-name> -->
+<!-- 		<url-pattern>/facebook/panel</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+	<servlet-mapping>
+		<servlet-name>fbsignin</servlet-name>
+		<url-pattern>/facebook/signin</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>fbcallback</servlet-name>
+		<url-pattern>/facebook/callback</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>fblogout</servlet-name>
+		<url-pattern>/facebook/logout</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>fbpost</servlet-name>
+		<url-pattern>/facebook/post</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>fbfriends</servlet-name>
+		<url-pattern>/facebook/friends</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>fbstatus</servlet-name>
+		<url-pattern>/facebook/posts</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>fbtimeline</servlet-name>
+		<url-pattern>/facebook/timeline</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>twsignin</servlet-name>
+		<servlet-class>twitter4j.sign.SignInServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>twcallback</servlet-name>
+		<servlet-class>twitter4j.sign.CallbackServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>twlogout</servlet-name>
+		<servlet-class>twitter4j.sign.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>twpost</servlet-name>
+		<servlet-class>twitter4j.profile.PostServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>twsignin</servlet-name>
+		<url-pattern>/twitter/signin</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>twcallback</servlet-name>
+		<url-pattern>/twitter/callback</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>twlogout</servlet-name>
+		<url-pattern>/twitter/logout</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>twpost</servlet-name>
+		<url-pattern>/twitter/post</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<error-page>
+		<exception-type>facebook4j.FacebookException</exception-type>
+		<location>/error.jsp</location>
+	</error-page>
+
+</web-app>
