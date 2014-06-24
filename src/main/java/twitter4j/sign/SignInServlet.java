@@ -28,6 +28,7 @@ public class SignInServlet extends HttpServlet {
 
 			RequestToken requestToken = twitter
 					.getOAuthRequestToken(callbackURL.toString());
+			// RequestToken requestToken = twitter.getOAuthRequestToken();
 			request.getSession().setAttribute("requestToken", requestToken);
 			response.sendRedirect(requestToken.getAuthenticationURL());
 

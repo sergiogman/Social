@@ -4,10 +4,10 @@
           http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
 
-<!-- 	<servlet> -->
-<!-- 		<servlet-name>fbpanel</servlet-name> -->
-<!-- 		<servlet-class>insonet.FacebookServlet</servlet-class> -->
-<!-- 	</servlet> -->
+	<!-- <servlet> -->
+	<!-- <servlet-name>fbpanel</servlet-name> -->
+	<!-- <servlet-class>insonet.FacebookServlet</servlet-class> -->
+	<!-- </servlet> -->
 	<servlet>
 		<servlet-name>fbsignin</servlet-name>
 		<servlet-class>facebook4j.sign.SignInServlet</servlet-class>
@@ -37,10 +37,10 @@
 		<servlet-class>facebook4j.profile.StreamServlet</servlet-class>
 	</servlet>
 
-<!-- 	<servlet-mapping> -->
-<!-- 		<servlet-name>fbpanel</servlet-name> -->
-<!-- 		<url-pattern>/facebook/panel</url-pattern> -->
-<!-- 	</servlet-mapping> -->
+	<!-- <servlet-mapping> -->
+	<!-- <servlet-name>fbpanel</servlet-name> -->
+	<!-- <url-pattern>/facebook/panel</url-pattern> -->
+	<!-- </servlet-mapping> -->
 	<servlet-mapping>
 		<servlet-name>fbsignin</servlet-name>
 		<url-pattern>/facebook/signin</url-pattern>
@@ -86,6 +86,10 @@
 		<servlet-name>twpost</servlet-name>
 		<servlet-class>twitter4j.profile.PostServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>twstatus</servlet-name>
+		<servlet-class>twitter4j.profile.StatusServlet</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>twsignin</servlet-name>
@@ -102,6 +106,10 @@
 	<servlet-mapping>
 		<servlet-name>twpost</servlet-name>
 		<url-pattern>/twitter/post</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>twstatus</servlet-name>
+		<url-pattern>/twitter/status</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>

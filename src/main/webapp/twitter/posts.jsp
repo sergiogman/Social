@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="facebook4j.*"%>
+<%@ page import="twitter4j.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,13 +9,14 @@
 </head>
 <body>
 	<%
-		ResponseList<Post> lista = (ResponseList<Post>) request
+		ResponseList<Status> lista = (ResponseList<Status>) request
 				.getAttribute("posts");
 
-		for (Post pp : lista) {
+		for (Status pp : lista) {
 	%>
-	<p><%=pp.getMessage()%></p>
-	<p><%=pp.getUpdatedTime()%></p>
+	<p><%=pp.getText()%></p>
+	<p><%=pp.getUser().getName()%></p>
+	<p><%=pp.getUser().getCreatedAt()%></p>
 	<%
 		}
 	%>

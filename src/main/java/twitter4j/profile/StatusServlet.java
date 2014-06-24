@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import facebook4j.Facebook;
-import facebook4j.FacebookException;
-import facebook4j.Post;
-import facebook4j.ResponseList;
+import twitter4j.ResponseList;
+import twitter4j.Status;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
 
 public class StatusServlet extends HttpServlet {
 	private static final long serialVersionUID = -7453606094644144082L;
@@ -19,18 +19,18 @@ public class StatusServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		Facebook facebook = (Facebook) request.getSession().getAttribute(
-				"facebook");
-		ResponseList<Post> posts = null;
+		Twitter twitter = (Twitter) request.getSession().getAttribute(
+				"twitter");
+		 ResponseList<Status> posts = null;
 		try {
-			posts = facebook.getStatuses();
-		} catch (FacebookException e) {
+			posts = twitter.getHomeTimeline();
+		} catch (TwitterException e) {
 			e.printStackTrace();
 		}
 		request.setAttribute("posts", posts);
 
 		RequestDispatcher dispatcher = request
-				.getRequestDispatcher("/posts.jsp");
+				.getRequestDispatcher("/twitter/posts.jsp");
 		dispatcher.forward(request, response);
 	}
 

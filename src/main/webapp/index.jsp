@@ -8,10 +8,10 @@
 </head>
 <body>
 	<p>
-		<a href="facebook/">Facebook</a>
+		<a href="facebook/signin">Facebook</a>
 	</p>
 	<p>
-		<a href="twitter/">Twitter</a>
+		<a href="twitter/signin">Twitter</a>
 	</p>
 </body>
 </html>
